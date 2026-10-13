@@ -1,0 +1,1 @@
+{"actorOutputSchemaVersion":1,"description":"Bulk technical SEO audit results, one row per audited URL.","properties":{"dataset":{"description":"Dataset with one row per URL: status codes, redirect chains, titles, meta descriptions, headings, images and more.","template":"{{links.apiDefaultDatasetUrl}}/items","title":"Audit results","type":"string"}},"title":"SEO Audit output"}

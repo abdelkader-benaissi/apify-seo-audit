@@ -1,0 +1,7 @@
+# Apify SDK. Installed explicitly: the base image does not guarantee it.
+apify
+# HTTP client (HTTP-only actor, no headless browser).
+httpx
+# HTML parsing.
+beautifulsoup4
+lxml

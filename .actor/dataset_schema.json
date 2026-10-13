@@ -1,0 +1,242 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "canonical": {
+        "description": "Canonical URL from link rel=canonical, if present.",
+        "title": "Canonical",
+        "type": "string"
+      },
+      "error": {
+        "description": "Failure reason when ok is false.",
+        "title": "Error",
+        "type": "string"
+      },
+      "finalUrl": {
+        "description": "URL after following all redirects.",
+        "title": "Final URL",
+        "type": "string"
+      },
+      "h1": {
+        "description": "Text of the first H1 heading, if present.",
+        "title": "H1",
+        "type": "string"
+      },
+      "h1Count": {
+        "description": "Number of H1 headings on the page.",
+        "title": "H1 count",
+        "type": "integer"
+      },
+      "hasViewport": {
+        "description": "Whether a viewport meta tag is present (mobile-friendliness signal).",
+        "title": "Has viewport",
+        "type": "boolean"
+      },
+      "hreflangCount": {
+        "description": "Number of link rel=hreflang alternates.",
+        "title": "Hreflang count",
+        "type": "integer"
+      },
+      "imagesMissingAlt": {
+        "description": "Images with missing or empty alt text.",
+        "title": "Images missing alt",
+        "type": "integer"
+      },
+      "imagesTotal": {
+        "description": "Total number of img tags on the page.",
+        "title": "Images total",
+        "type": "integer"
+      },
+      "lang": {
+        "description": "Value of the html lang attribute, if present.",
+        "title": "HTML lang",
+        "type": "string"
+      },
+      "loadTimeMs": {
+        "description": "Time from request start to full response, in milliseconds.",
+        "title": "Load time (ms)",
+        "type": "integer"
+      },
+      "metaDescription": {
+        "description": "Content of the meta description tag, if present.",
+        "title": "Meta description",
+        "type": "string"
+      },
+      "metaDescriptionLength": {
+        "description": "Character length of the meta description.",
+        "title": "Meta description length",
+        "type": "integer"
+      },
+      "ok": {
+        "description": "Whether the URL was fetched and audited successfully.",
+        "title": "OK",
+        "type": "boolean"
+      },
+      "redirectChain": {
+        "description": "Full redirect chain as 'status URL -> status URL ...'.",
+        "title": "Redirect chain",
+        "type": "string"
+      },
+      "redirectCount": {
+        "description": "Number of redirects followed.",
+        "title": "Redirect count",
+        "type": "integer"
+      },
+      "robotsMeta": {
+        "description": "Content of the meta robots tag, if present.",
+        "title": "Meta robots",
+        "type": "string"
+      },
+      "statusCode": {
+        "description": "Final HTTP status code.",
+        "title": "Status code",
+        "type": "integer"
+      },
+      "title": {
+        "description": "Content of the title tag, if present.",
+        "title": "Title",
+        "type": "string"
+      },
+      "titleLength": {
+        "description": "Character length of the title.",
+        "title": "Title length",
+        "type": "integer"
+      },
+      "url": {
+        "description": "The URL as requested.",
+        "title": "URL",
+        "type": "string"
+      },
+      "wordCount": {
+        "description": "Number of words in the visible page text.",
+        "title": "Word count",
+        "type": "integer"
+      }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "url",
+          "ok",
+          "statusCode",
+          "finalUrl",
+          "redirectCount",
+          "redirectChain",
+          "loadTimeMs",
+          "title",
+          "titleLength",
+          "metaDescription",
+          "metaDescriptionLength",
+          "canonical",
+          "robotsMeta",
+          "h1",
+          "h1Count",
+          "wordCount",
+          "imagesTotal",
+          "imagesMissingAlt",
+          "hreflangCount",
+          "hasViewport",
+          "lang",
+          "error"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "url": {
+            "label": "URL",
+            "format": "link"
+          },
+          "ok": {
+            "label": "OK",
+            "format": "boolean"
+          },
+          "statusCode": {
+            "label": "Status",
+            "format": "number"
+          },
+          "finalUrl": {
+            "label": "Final URL",
+            "format": "link"
+          },
+          "redirectCount": {
+            "label": "Redirects",
+            "format": "number"
+          },
+          "redirectChain": {
+            "label": "Redirect chain",
+            "format": "text"
+          },
+          "loadTimeMs": {
+            "label": "Load ms",
+            "format": "number"
+          },
+          "title": {
+            "label": "Title",
+            "format": "text"
+          },
+          "titleLength": {
+            "label": "Title len",
+            "format": "number"
+          },
+          "metaDescription": {
+            "label": "Meta description",
+            "format": "text"
+          },
+          "metaDescriptionLength": {
+            "label": "Meta desc len",
+            "format": "number"
+          },
+          "canonical": {
+            "label": "Canonical",
+            "format": "link"
+          },
+          "robotsMeta": {
+            "label": "Meta robots",
+            "format": "text"
+          },
+          "h1": {
+            "label": "H1",
+            "format": "text"
+          },
+          "h1Count": {
+            "label": "H1 count",
+            "format": "number"
+          },
+          "wordCount": {
+            "label": "Words",
+            "format": "number"
+          },
+          "imagesTotal": {
+            "label": "Images",
+            "format": "number"
+          },
+          "imagesMissingAlt": {
+            "label": "Images w/o alt",
+            "format": "number"
+          },
+          "hreflangCount": {
+            "label": "Hreflang",
+            "format": "number"
+          },
+          "hasViewport": {
+            "label": "Viewport",
+            "format": "boolean"
+          },
+          "lang": {
+            "label": "Lang",
+            "format": "text"
+          },
+          "error": {
+            "label": "Error",
+            "format": "text"
+          }
+        }
+      }
+    }
+  }
+}
